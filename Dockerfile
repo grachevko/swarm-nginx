@@ -7,4 +7,4 @@ COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["nginx", "-g", "daemon off;"]
-HEALTHCHECK --interval=30s --timeout=30s --start-period=360s CMD nc -z ${NGINX_BACKEND_HOST} 80
+HEALTHCHECK --interval=5s --timeout=5s --start-period=10s CMD nc -z ${NGINX_BACKEND_HOST} 80
